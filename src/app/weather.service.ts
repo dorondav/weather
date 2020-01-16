@@ -14,7 +14,7 @@ const API_KEY = environment.apiKey;
 export class WeatherService {
   // 3f38c2a67ef58306de9d61c7b485bcca api key
   city: City[] = [];
-
+  private weather: [];
   constructor(private http: HttpClient) {
   }
   test = 'e4b8b08c185638b825af37facfe1fabb';
@@ -26,5 +26,6 @@ export class WeatherService {
       .set('appId', this.test);
     return this.http.get(this.url + city, { params });
   }
+
 
 }

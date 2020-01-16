@@ -12,7 +12,6 @@
         </div>
     </form>
 </div>
-
 <!-- <section class="city-info" *ngIf="city.length >= 1"> -->
 <div class="card city-info">
     <div class="card-body">
@@ -23,7 +22,7 @@
         <button type="submit" class="btn btn-success">Save forecast</button>
     </div>
 </div>
-
+<!--
 <div class="card card-table">
     <table class="table " cellspacing="0" cellpadding="0">
         <thead>
@@ -43,4 +42,6 @@
             </tr>
         </tbody>
     </table>
-</div>
+</div> -->
+
+<app-weather-table [weather]='city'></app-weather-table>

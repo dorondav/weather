@@ -1,0 +1,20 @@
+<div class="card card-table">
+    <table class="table " cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>Datetime</th>
+                <th>Min Temp</th>
+                <th>Max Temp</th>
+                <th>Wind</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of weather | slice:1; let i = index">
+                <td>{{c.dt_txt | date: 'dd/MM/yyyy mm:HH:ss a' }}</td>
+                <td>{{c.main.temp_min}}&#8451;</td>
+                <td>{{c.main.temp_max}}&#8451;</td>
+                <td>{{c.wind.speed}}km/h</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

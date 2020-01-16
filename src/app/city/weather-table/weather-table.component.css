@@ -1,0 +1,25 @@
+.card {
+    width: 60%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 760px) {
+    .card {
+        font-size: 0.8rem;
+    }
+}
+
+.card-table {
+    margin: 1rem auto;
+}
+
+@media only screen and (max-width: 760px) {
+    table {
+        font-size: 0.8rem;
+    }
+}
+
+thead>tr:first-child {
+    color: blue;
+    margin: auto;
+}

@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { CityComponent } from './city/city.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
+import { WeatherTableComponent } from './city/weather-table/weather-table.component';
 @NgModule({
   declarations: [
     AppComponent,
-    CityComponent
+    CityComponent,
+    WeatherTableComponent
   ],
   imports: [
     BrowserModule,
