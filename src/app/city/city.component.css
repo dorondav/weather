@@ -1,61 +1,110 @@
-.form-card,
-.card {
-    width: 60%;
-    margin: auto;
-}
+  .form-card,
+  .card {
+      width: 90%;
+      margin: auto;
+  }
 
-form {
-    margin: 16px auto;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    padding: 1rem;
-}
+  @media only screen and (max-width: 760px) {
 
-.actions,
-.form-group {
-    margin: 1rem;
-}
 
-.actions button {
-    width: 50%;
-}
+      .form-card,
+      .card {
+          font-size: 0.8rem;
+      }
+  }
 
-.form-group {
-    width: 50%;
-}
+  form {
+      margin: 16px auto;
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      padding: 1rem;
+  }
 
-.actions {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    height: 50%;
+  .actions,
+  .form-group {
+      margin: 1rem;
+  }
 
-}
+  @media only screen and (min-width: 1090px) {
 
-button {
-    margin-right: 1rem;
-}
+      .form-card,
+      .card {
+          width: 60%;
+      }
 
-.city-info {
-    margin: auto;
-    width: 60%;
-}
+      .actions button {
+          width: 50%;
+      }
 
-.city-info .card-body {
-    display: flex;
-    flex-direction: column;
-}
+      .form-group {
+          width: 50%;
+      }
 
-.city-info .card-body button {
-    width: 15%;
-    margin-top: 0.5rem;
-}
+  }
 
-.card-table {
-    margin: 1rem auto;
-}
 
-thead>tr:first-child {
-    color: blue
-}
+  .actions {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      height: 50%;
+  }
+
+  @media only screen and (max-width: 1090px) {
+
+      .actions {
+          flex-direction: column;
+          width: 100%;
+          margin: 0.5rem;
+
+      }
+
+      .actions button {
+          margin: 0.3rem;
+      }
+
+      .form {
+          display: flex;
+          flex-direction: column;
+      }
+  }
+
+  button {
+      margin-right: 1rem;
+  }
+
+  .city-info {
+      margin: auto;
+      width: 60%;
+  }
+
+  .city-info .card-body {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .city-info .card-body button {
+      width: 10rem;
+      margin-top: 0.5rem;
+  }
+
+  @media only screen and (max-width: 760px) {
+      .city-info .card-body button {
+          font-size: 0.8rem;
+      }
+  }
+
+  .card-table {
+      margin: 1rem auto;
+  }
+
+  @media only screen and (max-width: 760px) {
+      table {
+          font-size: 0.8rem;
+      }
+  }
+
+  thead>tr:first-child {
+      color: blue
+  }

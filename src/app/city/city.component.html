@@ -1,5 +1,5 @@
 <div class="form-card">
-    <form [formGroup]='form' class="border-bottom" (submit)="onCitySelect()">
+    <form [formGroup]='form' class="form border-bottom" (submit)="onCitySelect()">
 
         <div class="form-group">
             <input type="text" formControlName="city" class="form-control" placeholder="Enter Location">
@@ -13,11 +13,10 @@
     </form>
 </div>
 
-<app-weather></app-weather>
 <!-- <section class="city-info" *ngIf="city.length >= 1"> -->
 <div class="card city-info">
     <div class="card-body">
-        <h4>{{city[0]}}</h4>
+        <h4>{{city[0] | uppercase}}</h4>
         <div>Period </div>
         <small>Start At: :{{city[1].dt_txt | date: 'dd/MM/yyyy mm:HH:ss a'}}</small>
         <small>Ends At: :{{city[40].dt_txt | date: 'dd/MM/yyyy mm:HH:ss a' }}</small>
