@@ -1,0 +1,61 @@
+.form-card,
+.card {
+    width: 60%;
+    margin: auto;
+}
+
+form {
+    margin: 16px auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.actions,
+.form-group {
+    margin: 1rem;
+}
+
+.actions button {
+    width: 50%;
+}
+
+.form-group {
+    width: 50%;
+}
+
+.actions {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    height: 50%;
+
+}
+
+button {
+    margin-right: 1rem;
+}
+
+.city-info {
+    margin: auto;
+    width: 60%;
+}
+
+.city-info .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.city-info .card-body button {
+    width: 15%;
+    margin-top: 0.5rem;
+}
+
+.card-table {
+    margin: 1rem auto;
+}
+
+thead>tr:first-child {
+    color: blue
+}

@@ -1,1 +1,47 @@
-<p>city works!</p>
+<div class="form-card">
+    <form [formGroup]='form' class="border-bottom" (submit)="onCitySelect()">
+
+        <div class="form-group">
+            <input type="text" formControlName="city" class="form-control" placeholder="Enter Location">
+            <div *ngIf="submitted && form.get('city').invalid" class="invalid-feedback">
+            </div>
+        </div>
+        <div class="actions">
+            <button type="submit" class="btn btn-primary">Get From API</button>
+            <button class="btn btn-warning">Get From DB</button>
+        </div>
+    </form>
+</div>
+
+<app-weather></app-weather>
+<!-- <section class="city-info" *ngIf="city.length >= 1"> -->
+<div class="card city-info">
+    <div class="card-body">
+        <h4>{{city[0]}}</h4>
+        <div>Period </div>
+        <small>Start At: :{{city[1].dt_txt | date: 'dd/MM/yyyy mm:HH:ss a'}}</small>
+        <small>Ends At: :{{city[40].dt_txt | date: 'dd/MM/yyyy mm:HH:ss a' }}</small>
+        <button type="submit" class="btn btn-success">Save forecast</button>
+    </div>
+</div>
+
+<div class="card card-table">
+    <table class="table " cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th>Datetime</th>
+                <th>Min Temp</th>
+                <th>Max Temp</th>
+                <th>Wind</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of city | slice:1; let i = index">
+                <td>{{c.dt_txt | date: 'dd/MM/yyyy mm:HH:ss a' }}</td>
+                <td>{{c.main.temp_min}}&#8451;</td>
+                <td>{{c.main.temp_max}}&#8451;</td>
+                <td>{{c.wind.speed}}km/h</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

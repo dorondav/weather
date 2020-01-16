@@ -1,32 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { City } from '../models/city.model';
 import { WeatherService } from '../weather.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-city',
   templateUrl: './city.component.html',
-  styleUrls: ['./city.component.css']
+  styleUrls: ['./city.component.css'],
 })
 export class CityComponent implements OnInit {
-  city: City[];
+  city: City[] = [];
   title = 'weather';
-  error = '';
-  success = '';
-  constructor(private weatherService: WeatherService) {
-
-  }
+  cityName: string;
+  submitted = false;
+  form: FormGroup;
+  constructor(private weatherService: WeatherService) { }
   ngOnInit() {
-    this.getWeather();
+    // Initialize form on page upload
+    this.form = new FormGroup({
+      city: new FormControl(null, { validators: [Validators.required] })
+    });
   }
+  onCitySelect(city) {
+    // Stop if form is invalid
+    this.submitted = true;
+    if (this.form.invalid) {
+      return;
+    }
 
-  getWeather() {
-    // this.weatherService.getAll()
-    //   .subscribe((res: City[]) => {
-    //     this.city = res;
-    //   },
-    //     (err) => {
-    //       this.error = err;
-    //     });
+    this.weatherService.getCurrentWeather(this.form.value.city)
+      .subscribe((data: any) => {
+        this.city = [this.form.value.city, ...data.list];
+      });
   }
-
 }
